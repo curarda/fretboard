@@ -1,0 +1,1395 @@
+<meta charset="utf-8">
+<title>Klavye Ustası</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Klavye Ustası">
+<meta name="theme-color" content="#12141a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAE/0lEQVR42u2ay45bRRQA8wmIzUxmxuNX3pm8FAQkECDhmfCZfAUb1rBgzyfwGRCNNHSrjx1f+3TNtSmpVvaRSn1uyb6LvvHRxzdFQm64AjEOMQ4xDjEOMQ4xDjEOMQ4xDjEOEeMQ4xDjEOMQ4xDjEOMQ4xDjEOMQMQ4xDjEOMQ4xDjEOMQ4xDjEOMQ4R4xDjEOOQscTx629/XPHzs2VvYB1s7CS6hjiu5WkZB5zI4DjePVteUe6u/LwTsA42AqK+cbx7uiypdld/1QNYBxsZUdc4FiX17ha9gXWwkRH1iuPan5ZxpFjy4xjD0zKOLEtyHG+fLlrK3YUDucA62MiIusTx+59/ycFgHELF8fbJoqX61Y0GcoF1sJERdflb+enJoqXcXTiQC6yDjYzIOIzDOIxjNHHMW+rdzXsD62AjIzIO42Dj+PHxvKXcXTiQC6yDjYzIOIzDOIzDOIzDOIxjb+P44fG8pdxdOJALrIONjMg4jAOO49GspdpdNJALrIONjMg4jION4/tHs5Zyd+FALrAONjIi4zAONg5vT3kTzDiMY4u/lYtZS/WrGw3kAutgIyPq8rfy3cWspdxdOJALrIONjMg4jIOOY9pS727aG1gHGxmRcRiHcRjHSOL49mLaUu4uHMgF1g01/v3Lq1UMcgEnyo7j4bSl2l00kAusG2RcU8Z/iWzmAk5kHJBxkyw26cM4Di2OQWWs72OP43jzcNpS7i4cyAXWfdC4RRmXrHcBJzKO8cYR9mEchxPHLmUcXBwPzluq3UUDucC69cYd43jfxwoXcCLjMA4qjtcPzlvK3YUDucC6Ncbdy/iXVS7gRF726UhKHN4EMw7jMI7/cxy+c/jOsZJv7p+3lLsLB3KBdeuNu8exygWcyDhGHcca1z7GMWmpdzfpDaz7oHG3OFa6gBMZx3jjWO/avzi+vj9pKXcXDuQC6zYxbhfHehdwIuOAjCll7Hkc9yYt1e6igVxg3ebGAWVs4AJOZBy0cessjOPw4wgT2cK1f3F8dW/SUu4uHMgF1sFGRmQcxkHHcdZS7+6sN7AONjIi4zAONo5Xd89ayt2FA7nAOtjIiLwJJl72EeOQscfhO4fvHCv58u5ZS7m7cCAXWAcbGZFxGAccx53Tlmp30UAusA42MiLjMA7jMI6RxPHFndOWcnfhQC6wDjYyIuMwDuMwjrHEcfu0pdpdNJALrIONjKhLHC9vn7aUuwsHcoF1sJERGYdxGIdxjCaOk5Z6dye9gXWwkREZh3GwcXgHwvscxmEcxmEcxiFEHC9unbSU72vhQC6wDjYyoi4vpJ/fOmkpdxcO5ALrYCMjMg7jgONYBlS7W97sDayDjYzIOIyDjeOzZUC5u3AgF1gHGxmRcRiHcRiHcRiHcRjH3sbx6SKg3F04kAusg42MyDiMg47juKXe3XFvYB1sZETGYRzGYRwjicM7EN7nMA7jMA7jMA4h4vhkftxSvq+FA7nAOtjIiLq8kIZ9GMc+xrH5Ex8QR9uHcexdHIMe99A4jkrq3R31BtbBRkbUMY73fcyOrqh2V3zeCVgHGwHR0Gc9OI5Lns+Onte7u/ykK7AONnYVbfeUt4zjEuMYfxy7PN+d4pDDxjjEOMQ4xDjEOMQ4xDjEOMQ4xDjEOESMQ4xDjEOMQ4xDjEOMQ4xDjEOMQ8Q4xDjEOMQ4xDjEOMQ4xDjEOMQ4RIxDjEO24B9MUyW37wTf+gAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAE/0lEQVR42u2ay45bRRQA8wmIzUxmxuNX3pm8FAQkECDhmfCZfAUb1rBgzyfwGRCNNHSrjx1f+3TNtSmpVvaRSn1uyb6LvvHRxzdFQm64AjEOMQ4xDjEOMQ4xDjEOMQ4xDjEOEeMQ4xDjEOMQ4xDjEOMQ4xDjEOMQMQ4xDjEOMQ4xDjEOMQ4xDjEOMQ4R4xDjEOOQscTx629/XPHzs2VvYB1s7CS6hjiu5WkZB5zI4DjePVteUe6u/LwTsA42AqK+cbx7uiypdld/1QNYBxsZUdc4FiX17ha9gXWwkRH1iuPan5ZxpFjy4xjD0zKOLEtyHG+fLlrK3YUDucA62MiIusTx+59/ycFgHELF8fbJoqX61Y0GcoF1sJERdflb+enJoqXcXTiQC6yDjYzIOIzDOIxjNHHMW+rdzXsD62AjIzIO42Dj+PHxvKXcXTiQC6yDjYzIOIzDOIzDOIzDOIxjb+P44fG8pdxdOJALrIONjMg4jAOO49GspdpdNJALrIONjMg4jION4/tHs5Zyd+FALrAONjIi4zAONg5vT3kTzDiMY4u/lYtZS/WrGw3kAutgIyPq8rfy3cWspdxdOJALrIONjMg4jIOOY9pS727aG1gHGxmRcRiHcRjHSOL49mLaUu4uHMgF1g01/v3Lq1UMcgEnyo7j4bSl2l00kAusG2RcU8Z/iWzmAk5kHJBxkyw26cM4Di2OQWWs72OP43jzcNpS7i4cyAXWfdC4RRmXrHcBJzKO8cYR9mEchxPHLmUcXBwPzluq3UUDucC69cYd43jfxwoXcCLjMA4qjtcPzlvK3YUDucC6Ncbdy/iXVS7gRF726UhKHN4EMw7jMI7/cxy+c/jOsZJv7p+3lLsLB3KBdeuNu8exygWcyDhGHcca1z7GMWmpdzfpDaz7oHG3OFa6gBMZx3jjWO/avzi+vj9pKXcXDuQC6zYxbhfHehdwIuOAjCll7Hkc9yYt1e6igVxg3ebGAWVs4AJOZBy0cessjOPw4wgT2cK1f3F8dW/SUu4uHMgF1sFGRmQcxkHHcdZS7+6sN7AONjIi4zAONo5Xd89ayt2FA7nAOtjIiLwJJl72EeOQscfhO4fvHCv58u5ZS7m7cCAXWAcbGZFxGAccx53Tlmp30UAusA42MiLjMA7jMI6RxPHFndOWcnfhQC6wDjYyIuMwDuMwjrHEcfu0pdpdNJALrIONjKhLHC9vn7aUuwsHcoF1sJERGYdxGIdxjCaOk5Z6dye9gXWwkREZh3GwcXgHwvscxmEcxmEcxiFEHC9unbSU72vhQC6wDjYyoi4vpJ/fOmkpdxcO5ALrYCMjMg7jgONYBlS7W97sDayDjYzIOIyDjeOzZUC5u3AgF1gHGxmRcRiHcRiHcRiHcRjH3sbx6SKg3F04kAusg42MyDiMg47juKXe3XFvYB1sZETGYRzGYRwjicM7EN7nMA7jMA7jMA4h4vhkftxSvq+FA7nAOtjIiLq8kIZ9GMc+xrH5Ex8QR9uHcexdHIMe99A4jkrq3R31BtbBRkbUMY73fcyOrqh2V3zeCVgHGwHR0Gc9OI5Lns+Onte7u/ykK7AONnYVbfeUt4zjEuMYfxy7PN+d4pDDxjjEOMQ4xDjEOMQ4xDjEOMQ4xDjEOESMQ4xDjEOMQ4xDjEOMQ4xDjEOMQ8Q4xDjEOMQ4xDjEOMQ4xDjEOMQ4RIxDjEO24B9MUyW37wTf+gAAAABJRU5ErkJggg==">
+<style>
+/* ============================================================
+   Klavye Ustası — gitar klavyesi antrenörü
+   Tek dosya, çevrimdışı. Sesler Web Audio ile sentezleniyor
+   (Karplus–Strong telli çalgı modeli), hiçbir ses dosyası yok.
+   ============================================================ */
+
+:root{
+  color-scheme: dark;
+  --ground:#101219;
+  --panel:#181c26;
+  --panel-2:#1f2430;
+  --ink:#eef1f7;
+  --ink-2:#9aa4b8;
+  --ink-3:#69738a;
+  --line:#2a3140;
+  --accent:#e8a33d;
+  --accent-soft:#3a2c14;
+  --ok:#3ec489;
+  --ok-soft:#123526;
+  --no:#e2594a;
+  --no-soft:#3a1a17;
+  --ref:#59a8f5;
+  --ref-soft:#122c47;
+  --hint:#c9a227;
+  /* klavye: gül ağacı */
+  --wood-1:#4b3123;
+  --wood-2:#38231a;
+  --wood-3:#2b1a13;
+  --wire:#b9bec9;
+  --wire-2:#767d8b;
+  --inlay:#d9d2c4;
+  --radius:14px;
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}
+
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font:15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  overscroll-behavior:none; -webkit-user-select:none; user-select:none;
+  touch-action:manipulation;
+}
+button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
+
+#app{
+  display:flex; flex-direction:column; height:100dvh;
+  padding:calc(var(--safe-t) + 6px) 10px calc(var(--safe-b) + 6px);
+  gap:8px; max-width:1100px; margin:0 auto;
+}
+
+/* ---------- üst şerit ---------- */
+.top{display:flex; align-items:center; gap:10px}
+.brand{font-weight:700; letter-spacing:.2px; font-size:15px; white-space:nowrap}
+.brand b{color:var(--accent)}
+.scorepill{
+  margin-left:auto; display:flex; gap:10px; align-items:center;
+  background:var(--panel); border:1px solid var(--line); border-radius:999px;
+  padding:5px 12px; font-size:12.5px; font-variant-numeric:tabular-nums;
+}
+.scorepill i{font-style:normal; color:var(--ink-3); margin-right:3px}
+.scorepill .v-ok{color:var(--ok)} .scorepill .v-no{color:var(--no)} .scorepill .v-st{color:var(--accent)}
+.iconbtn{
+  width:36px; height:36px; border-radius:10px; background:var(--panel);
+  border:1px solid var(--line); display:grid; place-items:center; font-size:17px; flex:none;
+}
+.iconbtn:active{background:var(--panel-2)}
+
+/* ---------- mod sekmeleri ---------- */
+.tabs{display:grid; grid-template-columns:repeat(4,1fr); gap:6px}
+.tab{
+  padding:9px 4px; border-radius:11px; background:var(--panel);
+  border:1px solid var(--line); font-size:12.5px; font-weight:600; color:var(--ink-2);
+  display:flex; flex-direction:column; align-items:center; gap:2px; line-height:1.15;
+}
+.tab u{font-size:15px; text-decoration:none}
+.tab[aria-selected="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent)}
+
+/* ---------- görev paneli ---------- */
+.task{
+  background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+  padding:10px 12px; display:flex; flex-direction:column; gap:8px;
+}
+.task-head{display:flex; align-items:flex-start; gap:10px}
+.task-txt{flex:1; min-width:0}
+.task-title{font-size:17px; font-weight:700; letter-spacing:.1px}
+.task-title em{font-style:normal; color:var(--accent)}
+.task-sub{font-size:12.5px; color:var(--ink-2); margin-top:2px}
+.task-sub b{color:var(--ink); font-weight:600}
+.counter{
+  flex:none; text-align:center; background:var(--panel-2); border-radius:10px;
+  padding:5px 10px; min-width:62px;
+}
+.counter .n{font-size:19px; font-weight:700; font-variant-numeric:tabular-nums; line-height:1.1}
+.counter .l{font-size:10px; color:var(--ink-3); text-transform:uppercase; letter-spacing:.5px}
+.counter.done .n{color:var(--ok)}
+
+.actions{display:flex; gap:6px; flex-wrap:wrap}
+.btn{
+  padding:8px 12px; border-radius:10px; background:var(--panel-2);
+  border:1px solid var(--line); font-size:13px; font-weight:600; color:var(--ink-2);
+}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent); border-color:var(--accent); color:#20160a}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.4}
+
+/* ---------- klavye ---------- */
+.boardwrap{
+  flex:1; min-height:0; display:flex; flex-direction:column; justify-content:center; gap:6px;
+}
+.board{display:flex; align-items:stretch; gap:0}
+.gutter{
+  flex:none; width:28px; display:flex; flex-direction:column;
+  border-right:1px solid var(--line);
+}
+.gutter .g{
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700; color:var(--ink-3);
+}
+.gutter .g.on{color:#20160a; background:var(--accent); border-radius:6px}
+#scroller{
+  flex:1; min-width:0; overflow-x:auto; overflow-y:hidden;
+  -webkit-overflow-scrolling:touch; scrollbar-width:none; touch-action:pan-x;
+}
+#scroller::-webkit-scrollbar{display:none}
+.neckbox{position:relative}
+
+.neck{
+  position:relative;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 3px, rgba(255,255,255,.012) 3px 7px),
+    linear-gradient(180deg, var(--wood-1), var(--wood-2) 55%, var(--wood-3));
+  border-radius:5px; overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.10), inset 0 -2px 6px rgba(0,0,0,.45);
+}
+.nut{position:absolute; top:0; bottom:0; background:linear-gradient(90deg,#efe7d6,#cfc6b3); z-index:3}
+.wire{position:absolute; top:0; bottom:0; width:2px; z-index:3;
+  background:linear-gradient(90deg,var(--wire-2),var(--wire),var(--wire-2));
+  box-shadow:0 0 2px rgba(0,0,0,.5)}
+.inlay{position:absolute; border-radius:50%; background:var(--inlay); opacity:.72; z-index:1;
+  box-shadow:inset 0 -1px 2px rgba(0,0,0,.35)}
+.gstring{position:absolute; left:0; right:0; z-index:2; pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(190,196,210,.95) 45%,rgba(60,64,74,.9));
+  box-shadow:0 1px 2px rgba(0,0,0,.55)}
+.zone{position:absolute; z-index:1; background:rgba(232,163,61,.13);
+  border-top:1px solid rgba(232,163,61,.30); border-bottom:1px solid rgba(232,163,61,.30)}
+
+.cell{
+  position:absolute; z-index:4; display:grid; place-items:center;
+  background:transparent; border:0; padding:0;
+}
+.cell .dot{
+  width:var(--dot); height:var(--dot); border-radius:50%;
+  display:grid; place-items:center;
+  font-size:calc(var(--dot) * .40); font-weight:700; line-height:1;
+  color:transparent; background:transparent; border:1.5px solid transparent;
+  transition:background .12s, border-color .12s, color .12s, transform .12s;
+  font-variant-numeric:tabular-nums;
+}
+.cell.named .dot{color:rgba(255,255,255,.42); border-color:rgba(255,255,255,.13)}
+.cell.ok .dot{background:var(--ok); border-color:var(--ok); color:#06281a}
+.cell.ref .dot{background:var(--ref); border-color:#bcdcff; color:#08243d; box-shadow:0 0 0 3px rgba(89,168,245,.28)}
+.cell.hint .dot{border-color:var(--hint); color:var(--hint); background:rgba(201,162,39,.18)}
+.cell.ghost .dot{border-color:rgba(255,255,255,.35); color:rgba(255,255,255,.55); border-style:dashed}
+.cell.bad .dot{background:var(--no); border-color:var(--no); color:#fff; animation:shake .3s}
+.cell.hit .dot{transform:scale(1.18)}
+.cell.ask .dot{border-color:rgba(255,255,255,.17); border-style:dashed}
+@keyframes shake{
+  0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)}
+  50%{transform:translateX(3px)} 75%{transform:translateX(-2px)}
+}
+.ripple{position:absolute; z-index:5; border-radius:50%; pointer-events:none;
+  border:2px solid rgba(255,255,255,.55); animation:rip .45s ease-out forwards}
+@keyframes rip{from{transform:scale(.4); opacity:.9} to{transform:scale(1.9); opacity:0}}
+
+.fretnums{position:relative; height:16px}
+.fretnums span{position:absolute; top:0; text-align:center; font-size:10.5px;
+  color:var(--ink-3); font-variant-numeric:tabular-nums}
+.fretnums span.mark{color:var(--ink-2); font-weight:700}
+.fretnums span.inzone{color:var(--accent)}
+
+/* ---------- alt şerit ---------- */
+.bottom{display:flex; align-items:center; gap:6px}
+.seg{display:flex; background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.seg button{padding:7px 11px; font-size:12px; font-weight:600; color:var(--ink-3)}
+.seg button[aria-pressed="true"]{background:var(--panel-2); color:var(--accent)}
+.spacer{flex:1}
+.hintline{font-size:11.5px; color:var(--ink-3); text-align:center; min-height:14px}
+
+/* ---------- bildirim ---------- */
+#toast{
+  position:fixed; left:50%; bottom:calc(var(--safe-b) + 74px); transform:translateX(-50%) translateY(10px);
+  background:var(--panel); border:1px solid var(--line); border-radius:12px;
+  padding:9px 15px; font-size:13.5px; font-weight:600; box-shadow:0 8px 24px rgba(0,0,0,.5);
+  opacity:0; pointer-events:none; transition:opacity .18s, transform .18s; z-index:60; white-space:nowrap;
+}
+#toast.on{opacity:1; transform:translateX(-50%) translateY(0)}
+#toast.good{border-color:var(--ok); color:var(--ok)}
+#toast.bad{border-color:var(--no); color:var(--no)}
+
+/* ---------- ayarlar ---------- */
+.sheet{
+  position:fixed; inset:0; z-index:80; background:rgba(6,8,12,.6);
+  display:none; align-items:flex-end; justify-content:center;
+}
+.sheet.on{display:flex}
+.sheet-in{
+  width:100%; max-width:560px; max-height:88dvh; overflow-y:auto;
+  background:var(--panel); border:1px solid var(--line); border-radius:18px 18px 0 0;
+  padding:14px 14px calc(var(--safe-b) + 18px);
+}
+.sheet h2{margin:2px 0 12px; font-size:17px; display:flex; align-items:center}
+.sheet h2 button{margin-left:auto; font-size:14px; color:var(--ink-2)}
+.grp{border-top:1px solid var(--line); padding:11px 0 3px}
+.grp:first-of-type{border-top:0}
+.grp h3{margin:0 0 8px; font-size:11px; text-transform:uppercase; letter-spacing:.7px; color:var(--ink-3); font-weight:700}
+.row{display:flex; align-items:center; gap:10px; padding:6px 0; font-size:14px}
+.row .lab{flex:1}
+.row .sub{display:block; font-size:11.5px; color:var(--ink-3); margin-top:1px}
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{
+  padding:6px 10px; border-radius:9px; background:var(--panel-2); border:1px solid var(--line);
+  font-size:12.5px; font-weight:600; color:var(--ink-3);
+}
+.chip[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent); color:var(--accent)}
+.sw{width:46px; height:27px; border-radius:99px; background:var(--panel-2); border:1px solid var(--line);
+  position:relative; flex:none; transition:background .15s}
+.sw::after{content:""; position:absolute; top:2px; left:2px; width:21px; height:21px; border-radius:50%;
+  background:var(--ink-3); transition:transform .15s, background .15s}
+.sw[aria-pressed="true"]{background:var(--accent-soft); border-color:var(--accent)}
+.sw[aria-pressed="true"]::after{transform:translateX(19px); background:var(--accent)}
+select{
+  background:var(--panel-2); color:var(--ink); border:1px solid var(--line);
+  border-radius:9px; padding:7px 9px; font:inherit; font-size:13px;
+}
+.statgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; text-align:center}
+.statgrid div{background:var(--panel-2); border-radius:10px; padding:9px 4px}
+.statgrid b{display:block; font-size:19px; font-variant-numeric:tabular-nums}
+.statgrid span{font-size:10.5px; color:var(--ink-3)}
+.tip{font-size:12px; color:var(--ink-3); line-height:1.5; margin:6px 0 0}
+
+@media (min-width:720px){
+  .task-title{font-size:19px}
+  .tab{font-size:13.5px; flex-direction:row; gap:6px}
+}
+</style>
+
+<div id="app">
+  <div class="top">
+    <div class="brand">Klavye <b>Ustası</b></div>
+    <div class="scorepill">
+      <span><i>✓</i><b class="v-ok" id="sOk">0</b></span>
+      <span><i>✕</i><b class="v-no" id="sNo">0</b></span>
+      <span><i>🔥</i><b class="v-st" id="sSt">0</b></span>
+    </div>
+    <button class="iconbtn" id="btnSet" aria-label="Ayarlar">⚙</button>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-mode="scale"><u>🎼</u>Gam</button>
+    <button class="tab" role="tab" data-mode="note"><u>🎯</u>Ses Bul</button>
+    <button class="tab" role="tab" data-mode="ival"><u>📐</u>Aralık</button>
+    <button class="tab" role="tab" data-mode="free"><u>🎸</u>Serbest</button>
+  </div>
+
+  <div class="task">
+    <div class="task-head">
+      <div class="task-txt">
+        <div class="task-title" id="tTitle">—</div>
+        <div class="task-sub" id="tSub"></div>
+      </div>
+      <div class="counter" id="tCount"><div class="n">0/0</div><div class="l">bulunan</div></div>
+    </div>
+    <div class="actions" id="acts">
+      <button class="btn primary" id="btnNew">Yeni soru</button>
+      <button class="btn" id="btnListen">🔊 Dinle</button>
+      <button class="btn" id="btnHint">İpucu</button>
+      <button class="btn ghost" id="btnReveal">Cevabı göster</button>
+    </div>
+  </div>
+
+  <div class="boardwrap">
+    <div class="board">
+      <div class="gutter" id="gutter"></div>
+      <div id="scroller"><div class="neckbox">
+        <div class="neck" id="neck"></div>
+        <div class="fretnums" id="fretnums"></div>
+      </div></div>
+    </div>
+    <div class="hintline" id="hintline"></div>
+  </div>
+
+  <div class="bottom">
+    <div class="seg" id="zoomSeg">
+      <button data-zoom="fit">Odak</button>
+      <button data-zoom="near">Yakın</button>
+      <button data-zoom="all">Tüm klavye</button>
+    </div>
+    <div class="spacer"></div>
+    <button class="iconbtn" id="btnSound" aria-label="Ses">🔊</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<div class="sheet" id="sheet">
+  <div class="sheet-in">
+    <h2>Ayarlar <button id="btnClose">Kapat ✕</button></h2>
+
+    <div class="grp">
+      <h3>Bu oturum</h3>
+      <div class="statgrid">
+        <div><b class="v-ok" id="stOk">0</b><span>doğru</span></div>
+        <div><b class="v-no" id="stNo">0</b><span>hata</span></div>
+        <div><b class="v-st" id="stBest">0</b><span>en uzun seri</span></div>
+      </div>
+      <div class="row"><span class="lab">Sayaçları sıfırla</span>
+        <button class="btn" id="btnReset">Sıfırla</button></div>
+    </div>
+
+    <div class="grp">
+      <h3>Görünüm</h3>
+      <div class="row"><span class="lab">Nota isimleri</span>
+        <div class="chips" id="setNaming">
+          <button class="chip" data-v="do">Do Re Mi</button>
+          <button class="chip" data-v="abc">C D E</button>
+        </div></div>
+      <div class="row"><span class="lab">Dereceleri göster<span class="sub">Bulunan seslerde 1, b3, 5… yazsın</span></span>
+        <button class="sw" id="setDeg"></button></div>
+      <div class="row"><span class="lab">Tüm notaları göster<span class="sub">Solmadan çalışmak için kapalı tut</span></span>
+        <button class="sw" id="setNames"></button></div>
+      <div class="row"><span class="lab">Solak klavye</span>
+        <button class="sw" id="setLefty"></button></div>
+      <div class="row"><span class="lab">Perde sayısı</span>
+        <select id="setFrets"><option value="12">12</option><option value="15">15</option>
+        <option value="17">17</option><option value="22">22</option><option value="24">24</option></select></div>
+    </div>
+
+    <div class="grp">
+      <h3>Ses</h3>
+      <div class="row"><span class="lab">Dokununca çal</span><button class="sw" id="setSound"></button></div>
+      <div class="row"><span class="lab">Akort</span>
+        <select id="setTuning"></select></div>
+    </div>
+
+    <div class="grp">
+      <h3>Alıştırma</h3>
+      <div class="row"><span class="lab">Bölge genişliği<span class="sub">Gam ve aralık sorularında kaç perdelik alan</span></span>
+        <select id="setSpan"><option value="4">4 perde</option><option value="5">5 perde</option>
+        <option value="6">6 perde</option><option value="8">8 perde</option></select></div>
+      <div class="row"><span class="lab">Doğru cevapta otomatik geç</span><button class="sw" id="setAuto"></button></div>
+      <div class="row"><span class="lab">Ses Bul: tam aynı ses<span class="sub">Açıkken oktavı da tutmalı (unison)</span></span>
+        <button class="sw" id="setUnison"></button></div>
+      <div class="row"><span class="lab">Ses Bul: kaç tel sorulsun</span>
+        <select id="setNoteStrings"><option value="1">1</option><option value="2">2</option>
+        <option value="3">3</option><option value="5">hepsi</option></select></div>
+    </div>
+
+    <div class="grp">
+      <h3>Gamlar</h3>
+      <div class="chips" id="setScales"></div>
+    </div>
+
+    <div class="grp">
+      <h3>Aralıklar</h3>
+      <div class="chips" id="setIvals"></div>
+      <p class="tip">Aralık modunda kökten yukarı sayılır; klavyedeki her oktavda o aralığa denk gelen
+      tüm sesler doğru kabul edilir.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================================================
+   1. Müzik verisi
+   ============================================================ */
+
+var PC = {
+  do_s:  ['Do','Do#','Re','Re#','Mi','Fa','Fa#','Sol','Sol#','La','La#','Si'],
+  do_f:  ['Do','Reb','Re','Mib','Mi','Fa','Solb','Sol','Lab','La','Sib','Si'],
+  abc_s: ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'],
+  abc_f: ['C','Db','D','Eb','E','F','Gb','G','Ab','A','Bb','B']
+};
+/* bemol yazılışı doğal duran kökler (Fa, Sib, Mib, Lab, Reb, Solb) */
+var FLAT_ROOTS = {5:1, 10:1, 3:1, 8:1, 1:1, 6:1};
+
+var TUNINGS = {
+  /* dizi başı 1. tel (ince mi), sonu 6. tel (kalın mi) */
+  std:    {name:'Standart · E A D G B E', midi:[64,59,55,50,45,40]},
+  eb:     {name:'Yarım ses pes · Eb',     midi:[63,58,54,49,44,39]},
+  dropd:  {name:'Drop D · D A D G B E',   midi:[64,59,55,50,45,38]},
+  dstd:   {name:'Bir ses pes · D',        midi:[62,57,53,48,43,38]},
+  dadgad: {name:'DADGAD',                 midi:[62,57,55,50,45,38]},
+  open_g: {name:'Açık Sol · D G D G B D', midi:[62,59,55,50,43,38]}
+};
+
+var SCALES = {
+  major:     {name:'Majör',            deg:[0,2,4,5,7,9,11], lab:['1','2','3','4','5','6','7']},
+  minor:     {name:'Doğal minör',      deg:[0,2,3,5,7,8,10], lab:['1','2','b3','4','5','b6','b7']},
+  majpent:   {name:'Majör pentatonik', deg:[0,2,4,7,9],      lab:['1','2','3','5','6']},
+  minpent:   {name:'Minör pentatonik', deg:[0,3,5,7,10],     lab:['1','b3','4','5','b7']},
+  blues:     {name:'Blues',            deg:[0,3,5,6,7,10],   lab:['1','b3','4','b5','5','b7']},
+  harmminor: {name:'Armonik minör',    deg:[0,2,3,5,7,8,11], lab:['1','2','b3','4','5','b6','7']},
+  dorian:    {name:'Dorian',           deg:[0,2,3,5,7,9,10], lab:['1','2','b3','4','5','6','b7']},
+  mixo:      {name:'Miksolidyen',      deg:[0,2,4,5,7,9,10], lab:['1','2','3','4','5','6','b7']}
+};
+var SCALE_ORDER = ['majpent','minpent','major','minor','blues','dorian','mixo','harmminor'];
+
+var IVALS = [
+  {s:1,  sh:'b2', nm:'küçük 2’li'},
+  {s:2,  sh:'2',  nm:'büyük 2’li'},
+  {s:3,  sh:'b3', nm:'küçük 3’lü'},
+  {s:4,  sh:'3',  nm:'büyük 3’lü'},
+  {s:5,  sh:'4',  nm:'tam 4’lü'},
+  {s:6,  sh:'b5', nm:'triton'},
+  {s:7,  sh:'5',  nm:'tam 5’li'},
+  {s:8,  sh:'b6', nm:'küçük 6’lı'},
+  {s:9,  sh:'6',  nm:'büyük 6’lı'},
+  {s:10, sh:'b7', nm:'küçük 7’li'},
+  {s:11, sh:'7',  nm:'büyük 7’li'},
+  {s:12, sh:'8',  nm:'oktav'}
+];
+
+var INLAY_1 = [3,5,7,9,15,17,19,21];
+var INLAY_2 = [12,24];
+var ORD = ['1.','2.','3.','4.','5.','6.'];
+
+/* ============================================================
+   2. Ayarlar ve istatistik
+   ============================================================ */
+
+var DEF = {
+  mode:'scale', naming:'do', sound:true, lefty:false, maxFret:24, tuning:'std',
+  span:4, showNames:false, showDeg:true, autoNext:true, unison:false,
+  noteStrings:3, zoom:'fit',
+  scales:{majpent:1, minpent:1, major:1, minor:1, blues:0, dorian:0, mixo:0, harmminor:0},
+  ivals:{3:1, 4:1, 5:1, 7:1, 10:1, 12:1, 1:0, 2:0, 6:0, 8:0, 9:0, 11:0}
+};
+var S = load('gitar.ayar', DEF);
+var ST = load('gitar.skor', {ok:0, no:0, streak:0, best:0});
+
+function load(k, def){
+  try{
+    var raw = localStorage.getItem(k);
+    if(!raw) return JSON.parse(JSON.stringify(def));
+    var got = JSON.parse(raw), out = JSON.parse(JSON.stringify(def));
+    for(var p in got){ if(p in out){
+      if(out[p] && typeof out[p]==='object' && !Array.isArray(out[p])){
+        for(var q in got[p]) out[p][q] = got[p][q];
+      } else out[p] = got[p];
+    }}
+    return out;
+  }catch(e){ return JSON.parse(JSON.stringify(def)); }
+}
+function save(){
+  try{
+    localStorage.setItem('gitar.ayar', JSON.stringify(S));
+    localStorage.setItem('gitar.skor', JSON.stringify(ST));
+  }catch(e){}
+}
+
+/* ============================================================
+   3. Yardımcılar
+   ============================================================ */
+
+var $ = function(s){ return document.querySelector(s); };
+function pick(a){ return a[(Math.random()*a.length)|0]; }
+function randInt(n){ return (Math.random()*n)|0; }
+function shuffle(a){ for(var i=a.length-1;i>0;i--){ var j=randInt(i+1), t=a[i]; a[i]=a[j]; a[j]=t; } return a; }
+function ki(s,f){ return s + ':' + f; }
+
+function tuning(){ return (TUNINGS[S.tuning] || TUNINGS.std).midi; }
+function midiAt(s,f){ return tuning()[s] + f; }
+function pcAt(s,f){ return ((tuning()[s] + f) % 12 + 12) % 12; }
+
+function noteName(pc, flat){
+  pc = ((pc % 12) + 12) % 12;
+  var t = (S.naming === 'abc') ? (flat ? PC.abc_f : PC.abc_s) : (flat ? PC.do_f : PC.do_s);
+  return t[pc];
+}
+function octOf(m){ return Math.floor(m/12) - 1; }
+
+/* ============================================================
+   4. Ses — Karplus–Strong ile telli çalgı
+   ============================================================ */
+
+var actx = null, master = null, cache = {}, cacheKeys = [];
+
+function audioOn(){
+  if(!actx){
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if(!AC) return null;
+    actx = new AC();
+    var body = actx.createBiquadFilter();       /* gövde rezonansı */
+    body.type = 'peaking'; body.frequency.value = 180; body.Q.value = 1.1; body.gain.value = 4;
+    var top = actx.createBiquadFilter();        /* tiz yumuşatma */
+    top.type = 'lowpass'; top.frequency.value = 5200; top.Q.value = .7;
+    var comp = actx.createDynamicsCompressor();
+    comp.threshold.value = -14; comp.ratio.value = 3;
+    master = actx.createGain(); master.gain.value = .9;
+    body.connect(top); top.connect(comp); comp.connect(master); master.connect(actx.destination);
+    actx._in = body;
+  }
+  if(actx.state === 'suspended') actx.resume();
+  return actx;
+}
+
+function buffer(midi){
+  var hit = cache[midi];
+  if(hit) return hit;
+  var sr = actx.sampleRate;
+  var freq = 440 * Math.pow(2, (midi - 69) / 12);
+  var dur = Math.max(1.1, 2.6 - (midi - 40) * 0.022);
+  var N = Math.max(2, Math.round(sr / freq));
+  var len = Math.floor(sr * dur);
+  var buf = actx.createBuffer(1, len, sr);
+  var out = buf.getChannelData(0);
+
+  /* mızrap darbesi: gürültüyü hafif alçak geçirenden süzüyoruz ki tırmalamasın */
+  var line = new Float32Array(N), prev = 0;
+  for(var i=0;i<N;i++){
+    var n = Math.random()*2 - 1;
+    prev = prev*0.55 + n*0.45;
+    line[i] = prev;
+  }
+  /* kayıp: pes teller uzun, tiz teller kısa sürer */
+  var decay = 0.9965 + Math.max(0, (52 - midi)) * 0.00004;
+  if(decay > 0.9992) decay = 0.9992;
+  var idx = 0, fadeAt = len * 0.72, fadeLen = len - fadeAt;
+  for(var j=0;j<len;j++){
+    var cur = line[idx], nxt = line[(idx+1) % N];
+    var v = decay * (cur*0.5 + nxt*0.5);
+    line[idx] = v;
+    idx = (idx+1) % N;
+    var amp = j < fadeAt ? 1 : (1 - (j - fadeAt) / fadeLen);
+    out[j] = cur * amp;
+  }
+  cache[midi] = buf; cacheKeys.push(midi);
+  if(cacheKeys.length > 40){ delete cache[cacheKeys.shift()]; }
+  return buf;
+}
+
+function playNote(midi, vel, when){
+  if(!S.sound) return;
+  if(!audioOn()) return;
+  var t = (when || 0) + actx.currentTime;
+  var src = actx.createBufferSource();
+  src.buffer = buffer(midi);
+  var g = actx.createGain();
+  g.gain.value = (vel == null ? 0.55 : vel);
+  src.connect(g); g.connect(actx._in);
+  src.start(t);
+}
+function playSeq(midis, gap){
+  gap = gap || 0.24;
+  for(var i=0;i<midis.length;i++) playNote(midis[i], 0.5, i*gap);
+}
+function buzz(){
+  if(!S.sound || !audioOn()) return;
+  var o = actx.createOscillator(), g = actx.createGain();
+  o.type = 'square'; o.frequency.value = 92;
+  g.gain.setValueAtTime(0.14, actx.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.16);
+  o.connect(g); g.connect(actx._in);
+  o.start(); o.stop(actx.currentTime + 0.18);
+}
+function vibrate(ms){ try{ navigator.vibrate && navigator.vibrate(ms); }catch(e){} }
+
+/* ============================================================
+   5. Klavye çizimi
+   ============================================================ */
+
+var neck = $('#neck'), scroller = $('#scroller'), gutter = $('#gutter'), fretnums = $('#fretnums');
+var cells = {};       /* "s:f" -> düğüm */
+var G = {};           /* geometri */
+
+function buildCells(){
+  neck.innerHTML = ''; gutter.innerHTML = ''; fretnums.innerHTML = ''; cells = {};
+  var layer = document.createDocumentFragment();
+
+  G.nut = document.createElement('div'); G.nut.className = 'nut'; layer.appendChild(G.nut);
+  G.zone = document.createElement('div'); G.zone.className = 'zone'; G.zone.style.display = 'none';
+  layer.appendChild(G.zone);
+  G.wires = []; G.inlays = []; G.strings = []; G.nums = [];
+
+  for(var f=1; f<=24; f++){
+    var w = document.createElement('div'); w.className = 'wire';
+    G.wires.push(w); layer.appendChild(w);
+  }
+  for(var i=0;i<INLAY_1.length + INLAY_2.length*2; i++){
+    var d = document.createElement('div'); d.className = 'inlay';
+    G.inlays.push(d); layer.appendChild(d);
+  }
+  for(var s=0;s<6;s++){
+    var st = document.createElement('div'); st.className = 'gstring';
+    G.strings.push(st); layer.appendChild(st);
+    var g = document.createElement('div'); g.className = 'g'; gutter.appendChild(g);
+    G.nums.push(g);
+  }
+  for(var s2=0; s2<6; s2++){
+    for(var f2=0; f2<=24; f2++){
+      var c = document.createElement('button');
+      c.className = 'cell'; c.dataset.s = s2; c.dataset.f = f2;
+      c.innerHTML = '<span class="dot"></span>';
+      cells[ki(s2,f2)] = c; layer.appendChild(c);
+    }
+  }
+  neck.appendChild(layer);
+
+  G.fnum = [];
+  for(var n=0; n<=24; n++){
+    var sp = document.createElement('span'); sp.textContent = n;
+    G.fnum.push(sp); fretnums.appendChild(sp);
+  }
+}
+
+/* perde genişlikleri: gerçek gitar oranı ile eşit bölüm arası bir karışım —
+   yüksek perdeler görsel olarak daralsın ama parmakla dokunulabilir kalsın */
+function fretRel(maxF){
+  var real = [], sum = 0;
+  for(var f=1; f<=maxF; f++){
+    var r = Math.pow(2, -(f-1)/12) - Math.pow(2, -f/12);
+    real.push(r); sum += r;
+  }
+  var mean = sum / maxF, out = [0];
+  for(var i=0;i<maxF;i++) out.push(1 + 0.5 * (real[i]/mean - 1));
+  return out;
+}
+
+function layout(){
+  var maxF = S.maxFret;
+  var availW = scroller.clientWidth || 320;
+  var boxH = Math.max(180, (document.querySelector('.boardwrap').clientHeight || 300) - 26);
+  var rowH = Math.max(30, Math.min(66, Math.floor(boxH / 6)));
+
+  var vis;
+  if(S.zoom === 'all') vis = maxF + 1.1;
+  else if(S.zoom === 'near') vis = Math.min(maxF + 1.1, 7.4);
+  else {
+    var v = view();
+    var span = v ? (v.to - v.from + 1) : 6;
+    vis = Math.min(maxF + 1.1, Math.max(5.4, span + 1.8));
+  }
+  var unit = availW / vis;
+  var dot = Math.max(12, Math.min(30, Math.min(rowH - 8, unit * 0.92)));
+  var openW = unit * 0.86, nutW = Math.max(5, unit * 0.10);
+
+  var rel = fretRel(maxF), X = [], W = [];
+  X[0] = 0; W[0] = openW;
+  var x = openW + nutW;
+  for(var f=1; f<=maxF; f++){ W[f] = unit * rel[f]; X[f] = x; x += W[f]; }
+  var total = x + 2;
+
+  var L = function(f){ return S.lefty ? (total - X[f] - W[f]) : X[f]; };
+  G.X = X; G.W = W; G.L = L; G.total = total; G.rowH = rowH; G.unit = unit; G.maxF = maxF;
+
+  neck.style.width = total + 'px';
+  neck.style.height = (rowH * 6) + 'px';
+  neck.style.setProperty('--dot', dot + 'px');
+  fretnums.style.width = total + 'px';
+
+  G.nut.style.left = (S.lefty ? (total - openW - nutW) : openW) + 'px';
+  G.nut.style.width = nutW + 'px';
+
+  for(var w=1; w<=24; w++){
+    var el = G.wires[w-1];
+    if(w > maxF){ el.style.display = 'none'; continue; }
+    el.style.display = '';
+    el.style.left = (S.lefty ? (total - X[w] - W[w] - 1) : (X[w] + W[w] - 1)) + 'px';
+  }
+
+  var k = 0;
+  function inlay(f, cy, size){
+    var el = G.inlays[k++];
+    if(!el) return;
+    if(f > maxF){ el.style.display = 'none'; return; }
+    el.style.display = '';
+    el.style.width = el.style.height = size + 'px';
+    el.style.left = (L(f) + W[f]/2 - size/2) + 'px';
+    el.style.top = (cy - size/2) + 'px';
+  }
+  var mid = rowH * 3, sz = Math.min(15, rowH * 0.42);
+  for(var a=0; a<INLAY_1.length; a++) inlay(INLAY_1[a], mid, sz);
+  for(var b=0; b<INLAY_2.length; b++){
+    inlay(INLAY_2[b], rowH * 1.5, sz);
+    inlay(INLAY_2[b], rowH * 4.5, sz);
+  }
+
+  for(var s=0; s<6; s++){
+    var th = 1 + s * 0.5;                       /* pes teller kalın */
+    var el2 = G.strings[s];
+    el2.style.top = (s * rowH + rowH/2 - th/2) + 'px';
+    el2.style.height = th + 'px';
+    G.nums[s].style.height = rowH + 'px';
+    G.nums[s].textContent = noteName(pcAt(s, 0), false);
+  }
+
+  for(var s3=0; s3<6; s3++){
+    for(var f3=0; f3<=24; f3++){
+      var c = cells[ki(s3,f3)];
+      if(f3 > maxF){ c.style.display = 'none'; continue; }
+      c.style.display = '';
+      c.style.left = L(f3) + 'px';
+      c.style.top = (s3 * rowH) + 'px';
+      c.style.width = W[f3] + 'px';
+      c.style.height = rowH + 'px';
+    }
+  }
+
+  var showEvery = unit > 34 ? 1 : 0;
+  for(var n=0; n<=24; n++){
+    var sp = G.fnum[n];
+    if(n > maxF){ sp.style.display = 'none'; continue; }
+    var marked = n === 0 || INLAY_1.indexOf(n) >= 0 || INLAY_2.indexOf(n) >= 0;
+    sp.style.display = (showEvery || marked) ? '' : 'none';
+    sp.className = marked ? 'mark' : '';
+    if(T && T.from != null && n >= T.from && n <= T.to) sp.className += ' inzone';
+    sp.style.left = L(n) + 'px';
+    sp.style.width = W[n] + 'px';
+  }
+  paintZone();
+}
+
+function paintZone(){
+  if(!T || T.from == null || S.mode === 'free'){ G.zone.style.display = 'none'; return; }
+  var a = G.L(T.from), b = G.L(T.to);
+  var left = Math.min(a, b), right = Math.max(a + G.W[T.from], b + G.W[T.to]);
+  G.zone.style.display = '';
+  G.zone.style.left = left + 'px';
+  G.zone.style.width = (right - left) + 'px';
+  G.zone.style.top = '0px';
+  G.zone.style.height = (G.rowH * 6) + 'px';
+}
+
+/* görünmesi gereken perde aralığı — alıştırma bölgesi ya da yoksa
+   referans sesi kapsayan pencere (Ses Bul modunda bölge yok) */
+function view(){
+  if(!T) return null;
+  if(T.viewFrom != null) return {from:T.viewFrom, to:T.viewTo};
+  if(T.from != null) return {from:T.from, to:T.to};
+  return null;
+}
+
+function scrollToZone(){
+  var v = view();
+  if(!v){ scroller.scrollLeft = S.lefty ? G.total : 0; return; }
+  var a = G.L(v.from), b = G.L(v.to);
+  var left = Math.min(a, b) - G.unit * 0.55;
+  var right = Math.max(a + G.W[v.from], b + G.W[v.to]) + G.unit * 0.55;
+  var w = scroller.clientWidth;
+  var target = left;
+  if(right - left < w) target = left - (w - (right - left)) / 2;
+  scroller.scrollTo({left: Math.max(0, target), behavior:'smooth'});
+}
+
+/* ---------- hücre durumları ---------- */
+function clearBoard(){
+  for(var k in cells){
+    var c = cells[k];
+    c.className = 'cell';
+    c.firstChild.textContent = '';
+  }
+  if(S.showNames){
+    for(var s=0; s<6; s++) for(var f=0; f<=S.maxFret; f++){
+      var c2 = cells[ki(s,f)];
+      c2.classList.add('named');
+      c2.firstChild.textContent = noteName(pcAt(s,f), false);
+    }
+  }
+}
+function mark(s, f, cls, text){
+  var c = cells[ki(s,f)];
+  if(!c) return;
+  c.classList.remove('named');
+  c.classList.add(cls);
+  if(text != null) c.firstChild.textContent = text;
+}
+function ripple(s, f){
+  var c = cells[ki(s,f)];
+  if(!c) return;
+  var d = document.createElement('div');
+  d.className = 'ripple';
+  var sz = G.rowH * 0.8;
+  d.style.width = d.style.height = sz + 'px';
+  d.style.left = (parseFloat(c.style.left) + parseFloat(c.style.width)/2 - sz/2) + 'px';
+  d.style.top = (parseFloat(c.style.top) + G.rowH/2 - sz/2) + 'px';
+  neck.appendChild(d);
+  setTimeout(function(){ d.remove(); }, 460);
+  c.classList.add('hit');
+  setTimeout(function(){ c.classList.remove('hit'); }, 140);
+}
+
+/* ============================================================
+   6. Görevler
+   ============================================================ */
+
+var T = null;          /* geçerli görev */
+var busy = false;      /* geçiş animasyonu sırasında dokunuşu yut */
+
+function enabledScales(){
+  var a = [];
+  for(var i=0;i<SCALE_ORDER.length;i++) if(S.scales[SCALE_ORDER[i]]) a.push(SCALE_ORDER[i]);
+  return a.length ? a : ['minpent'];
+}
+function enabledIvals(){
+  var a = [];
+  for(var i=0;i<IVALS.length;i++) if(S.ivals[IVALS[i].s]) a.push(IVALS[i]);
+  return a.length ? a : [IVALS[2]];
+}
+
+function newRound(){
+  busy = false;
+  T = {mode:S.mode, found:{}, targets:{}, n:0, total:0, wrong:0, hints:0, t0:Date.now(), done:false};
+  if(S.mode === 'scale') buildScale();
+  else if(S.mode === 'note') buildNote();
+  else if(S.mode === 'ival') buildIval();
+  else buildFree();
+  clearBoard();
+  layout();
+  paintTask();
+  updateTask();
+  scrollToZone();
+}
+
+/* ---- Mod 1: gam ---- */
+function buildScale(){
+  var maxF = S.maxFret, span = Math.min(S.span, maxF - 1);
+  for(var tries=0; tries<40; tries++){
+    var sk = pick(enabledScales()), sc = SCALES[sk];
+    var root = randInt(12);
+    var from = randInt(maxF - span + 1);
+    var to = from + span;
+    var tg = {}, n = 0;
+    var set = {};
+    for(var i=0;i<sc.deg.length;i++) set[(root + sc.deg[i]) % 12] = sc.lab[i];
+    for(var s=0; s<6; s++) for(var f=from; f<=to; f++){
+      var lab = set[pcAt(s,f)];
+      if(lab !== undefined){ tg[ki(s,f)] = lab; n++; }
+    }
+    if(n >= 8){
+      T.scaleKey = sk; T.root = root; T.from = from; T.to = to;
+      T.viewFrom = from; T.viewTo = to;
+      T.targets = tg; T.total = n; T.flat = !!FLAT_ROOTS[root];
+      return;
+    }
+  }
+  T.from = 0; T.to = span; T.targets = {}; T.total = 0;
+}
+
+/* ---- Mod 2: sesi diğer tellerde bul ---- */
+function buildNote(){
+  var maxF = S.maxFret;
+  for(var tries=0; tries<60; tries++){
+    var rs = randInt(6), rf = randInt(maxF + 1);
+    var refMidi = midiAt(rs, rf), refPc = refMidi % 12;
+    var pool = [];
+    for(var s=0; s<6; s++){
+      if(s === rs) continue;
+      if(S.unison){
+        var f = refMidi - midiAt(s, 0);
+        if(f >= 0 && f <= maxF) pool.push(s);
+      } else {
+        for(var f2=0; f2<=maxF; f2++) if(pcAt(s,f2) === refPc){ pool.push(s); break; }
+      }
+    }
+    if(pool.length < 1) continue;
+    shuffle(pool);
+    var want = Math.min(S.noteStrings, pool.length);
+    T.ref = {s:rs, f:rf};
+    T.refMidi = refMidi; T.refPc = refPc;
+    T.queue = pool.slice(0, want);
+    T.total = T.queue.length;
+    T.from = null; T.to = null;
+    T.flat = !!FLAT_ROOTS[refPc];
+    nextAsk();
+    return;
+  }
+  T.total = 0;
+}
+function nextAsk(){
+  T.ask = T.queue.shift();
+  T.askTargets = {};
+  if(T.ask == null) return;
+  var near = null;
+  for(var f=0; f<=S.maxFret; f++){
+    var ok = S.unison ? (midiAt(T.ask, f) === T.refMidi) : (pcAt(T.ask, f) === T.refPc);
+    if(ok){
+      T.askTargets[f] = 1;
+      if(near === null || Math.abs(f - T.ref.f) < Math.abs(near - T.ref.f)) near = f;
+    }
+  }
+  /* pencere: referans ile en yakın doğru cevap birlikte görünsün */
+  var lo = Math.min(T.ref.f, near === null ? T.ref.f : near);
+  var hi = Math.max(T.ref.f, near === null ? T.ref.f : near);
+  if(hi - lo < 4){ var pad = (4 - (hi - lo)); lo = Math.max(0, lo - Math.ceil(pad/2)); hi = Math.min(S.maxFret, hi + Math.floor(pad/2) + 1); }
+  T.viewFrom = lo; T.viewTo = hi;
+}
+
+/* ---- Mod 3: aralık ---- */
+function buildIval(){
+  var maxF = S.maxFret, span = Math.min(S.span + 2, maxF - 1);
+  for(var tries=0; tries<60; tries++){
+    var iv = pick(enabledIvals());
+    var rs = randInt(6), rf = randInt(maxF + 1);
+    var from = Math.max(0, Math.min(rf - 2 - randInt(3), maxF - span));
+    var to = from + span;
+    if(rf < from || rf > to) continue;
+    var refPc = pcAt(rs, rf), want = (refPc + iv.s) % 12;
+    var tg = {}, n = 0;
+    for(var s=0; s<6; s++) for(var f=from; f<=to; f++){
+      if(s === rs && f === rf) continue;
+      if(pcAt(s,f) === want){ tg[ki(s,f)] = iv.sh; n++; }
+    }
+    if(n >= 2){
+      T.iv = iv; T.ref = {s:rs, f:rf}; T.refPc = refPc;
+      T.from = from; T.to = to; T.viewFrom = from; T.viewTo = to;
+      T.targets = tg; T.total = n;
+      T.flat = !!FLAT_ROOTS[refPc];
+      return;
+    }
+  }
+  T.total = 0;
+}
+
+function buildFree(){
+  T.from = null; T.to = null; T.total = 0;
+}
+
+/* ---- tahtayı görevin başlangıç haline boya ---- */
+function paintTask(){
+  if(T.mode === 'note' || T.mode === 'ival'){
+    if(T.ref){
+      mark(T.ref.s, T.ref.f, 'ref', noteName(T.refPc, T.flat));
+    }
+  }
+  for(var g=0; g<6; g++) if(G.nums[g]) G.nums[g].classList.remove('on');
+  if(T.mode === 'note' && T.ask != null){
+    /* sorulan tel: kenardaki tel adı vurgulanır, perdeler soluk çerçeveyle işaretlenir */
+    for(var f=0; f<=S.maxFret; f++) cells[ki(T.ask, f)].classList.add('ask');
+    if(G.nums[T.ask]) G.nums[T.ask].classList.add('on');
+  }
+}
+
+/* ============================================================
+   7. Dokunma akışı
+   ============================================================ */
+
+function onTap(s, f){
+  audioOn();
+  playNote(midiAt(s,f));
+  ripple(s, f);
+
+  if(S.mode === 'free'){
+    mark(s, f, 'ok', noteName(pcAt(s,f), false));
+    setTimeout(function(){
+      var c = cells[ki(s,f)];
+      c.classList.remove('ok');
+      if(S.showNames){ c.classList.add('named'); }
+      else c.firstChild.textContent = '';
+    }, 1200);
+    toast(noteName(pcAt(s,f), false) + octOf(midiAt(s,f)) + ' · ' + ORD[s] + ' tel, ' + f + '. perde');
+    return;
+  }
+  if(!T || T.done || busy) return;
+
+  if(T.mode === 'note') tapNote(s, f);
+  else tapSet(s, f);
+}
+
+/* gam + aralık modu: bölgedeki tüm hedefleri topla */
+function tapSet(s, f){
+  var k = ki(s,f);
+  if(T.targets[k] && !T.found[k]){
+    T.found[k] = 1; T.n++;
+    var lab = T.mode === 'ival' ? T.iv.sh : T.targets[k];
+    mark(s, f, 'ok', S.showDeg ? lab : noteName(pcAt(s,f), T.flat));
+    score(true);
+    updateTask();
+    if(T.n >= T.total) finish();
+  } else if(T.found[k]){
+    /* zaten bulundu — sessizce geç */
+  } else {
+    wrongTap(s, f);
+  }
+}
+
+/* ses bul modu: her seferinde tek bir tel soruluyor */
+function tapNote(s, f){
+  if(s !== T.ask){
+    wrongTap(s, f);
+    hint(ORD[T.ask] + ' telde ara.');
+    return;
+  }
+  if(T.askTargets[f]){
+    T.n++;
+    T.found[ki(s,f)] = 1;
+    mark(s, f, 'ok', noteName(pcAt(s,f), T.flat));
+    score(true);
+    /* aynı teldeki diğer oktavları da hayalet olarak göster */
+    for(var g in T.askTargets){
+      g = +g;
+      if(g !== f) mark(s, g, 'ghost', noteName(pcAt(s,g), T.flat));
+    }
+    for(var q=0; q<=S.maxFret; q++) cells[ki(s,q)].classList.remove('ask');
+    updateTask();
+    busy = true;
+    setTimeout(function(){
+      busy = false;
+      if(T.queue.length){
+        /* hayaletleri temizle, sıradaki teli sor */
+        for(var q2=0; q2<=S.maxFret; q2++){
+          var c = cells[ki(T.ask, q2)];
+          c.classList.remove('ghost');
+          if(!c.classList.contains('ok')) c.firstChild.textContent = '';
+        }
+        nextAsk();
+        paintTask();
+        updateTask();
+        layout();
+        scrollToZone();
+      } else finish();
+    }, 900);
+  } else {
+    wrongTap(s, f);
+  }
+}
+
+function wrongTap(s, f){
+  var c = cells[ki(s,f)];
+  if(!c || c.classList.contains('ok')) return;
+  T.wrong++;
+  score(false);
+  buzz(); vibrate(35);
+  var had = c.className;
+  mark(s, f, 'bad', noteName(pcAt(s,f), T.flat));
+  setTimeout(function(){
+    c.className = had;
+    if(!c.classList.contains('named')) c.firstChild.textContent = '';
+    else c.firstChild.textContent = noteName(pcAt(s,f), false);
+  }, 520);
+}
+
+function score(ok){
+  if(ok){ ST.ok++; ST.streak++; if(ST.streak > ST.best) ST.best = ST.streak; }
+  else { ST.no++; ST.streak = 0; }
+  $('#sOk').textContent = ST.ok;
+  $('#sNo').textContent = ST.no;
+  $('#sSt').textContent = ST.streak;
+  save();
+}
+
+function finish(){
+  T.done = true;
+  var sec = Math.round((Date.now() - T.t0) / 1000);
+  var msg = T.wrong === 0 && T.hints === 0
+    ? 'Kusursuz! ' + sec + ' sn'
+    : 'Bitti · ' + sec + ' sn · ' + T.wrong + ' hata';
+  toast(msg, T.wrong === 0 ? 'good' : '');
+  if(S.sound && T.mode === 'scale'){
+    /* ödül: gamı bölgedeki en pes sesten yukarı doğru çal */
+    var ms = [];
+    for(var k in T.targets) ms.push(midiAt(+k.split(':')[0], +k.split(':')[1]));
+    ms.sort(function(a,b){ return a-b; });
+    var uniq = ms.filter(function(v,i){ return i===0 || v!==ms[i-1]; }).slice(0, 9);
+    setTimeout(function(){ playSeq(uniq, 0.13); }, 180);
+  }
+  updateTask();
+  if(S.autoNext) setTimeout(function(){ if(T && T.done) newRound(); }, 1600);
+}
+
+/* ============================================================
+   8. Görev metni
+   ============================================================ */
+
+function updateTask(){
+  var t = $('#tTitle'), sub = $('#tSub'), cnt = $('#tCount');
+  var acts = {hint:true, listen:true, reveal:true};
+
+  if(S.mode === 'free'){
+    t.innerHTML = 'Serbest çalış';
+    sub.textContent = 'İstediğin perdeye dokun — sesini duy, adını gör.';
+    cnt.style.display = 'none';
+    acts = {hint:false, listen:false, reveal:false};
+  } else if(S.mode === 'scale'){
+    var sc = SCALES[T.scaleKey];
+    t.innerHTML = '<em>' + noteName(T.root, T.flat) + '</em> ' + sc.name;
+    sub.innerHTML = '<b>' + T.from + '–' + T.to + '. perde</b> arasındaki bütün gam seslerine dokun.';
+    cnt.style.display = '';
+    cnt.firstChild.textContent = T.n + '/' + T.total;
+    cnt.lastChild.textContent = 'bulunan';
+  } else if(S.mode === 'note'){
+    var rn = noteName(T.refPc, T.flat);
+    t.innerHTML = '<em>' + rn + '</em>' + (S.unison ? octOf(T.refMidi) : '') +
+                  ' sesini <em>' + ORD[T.ask] + ' telde</em> bul';
+    sub.innerHTML = 'Referans: mavi nokta — <b>' + ORD[T.ref.s] + ' tel, ' + T.ref.f + '. perde</b>' +
+                    (S.unison ? ' · tam aynı ses (oktav dahil)' : ' · hangi oktav olduğu önemli değil');
+    cnt.style.display = '';
+    cnt.firstChild.textContent = T.n + '/' + T.total;
+    cnt.lastChild.textContent = 'tel';
+  } else {
+    t.innerHTML = '<em>' + noteName(T.refPc, T.flat) + '</em> sesinin <em>' + T.iv.sh + '</em>’lerini bul';
+    sub.innerHTML = T.iv.nm + ' · kök: <b>' + ORD[T.ref.s] + ' tel, ' + T.ref.f + '. perde</b> · ' +
+                    '<b>' + T.from + '–' + T.to + '. perde</b> arası';
+    cnt.style.display = '';
+    cnt.firstChild.textContent = T.n + '/' + T.total;
+    cnt.lastChild.textContent = 'bulunan';
+  }
+  cnt.classList.toggle('done', !!(T && T.done));
+  $('#btnHint').style.display = acts.hint ? '' : 'none';
+  $('#btnListen').style.display = acts.listen ? '' : 'none';
+  $('#btnReveal').style.display = acts.reveal ? '' : 'none';
+  $('#btnHint').disabled = !!(T && T.done);
+  $('#hintline').textContent = '';
+}
+
+function hint(msg){ $('#hintline').textContent = msg; }
+var toastTimer = null;
+function toast(msg, kind){
+  var el = $('#toast');
+  el.textContent = msg;
+  el.className = 'on ' + (kind || '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ el.className = ''; }, 1900);
+}
+
+/* ---- ipucu / cevap / dinle ---- */
+function doHint(){
+  if(!T || T.done) return;
+  T.hints++;
+  if(T.mode === 'note'){
+    var opts = Object.keys(T.askTargets).map(Number);
+    if(!opts.length) return;
+    var f = pick(opts);
+    mark(T.ask, f, 'hint', noteName(pcAt(T.ask, f), T.flat));
+    hint('İpucu: ' + ORD[T.ask] + ' tel, ' + f + '. perde');
+  } else {
+    var left = [];
+    for(var k in T.targets) if(!T.found[k]) left.push(k);
+    if(!left.length) return;
+    var kk = pick(left), s = +kk.split(':')[0], f2 = +kk.split(':')[1];
+    mark(s, f2, 'hint', T.mode === 'ival' ? T.iv.sh : T.targets[kk]);
+    playNote(midiAt(s, f2), 0.4);
+    hint('İpucu: ' + ORD[s] + ' tel, ' + f2 + '. perde');
+  }
+}
+function doReveal(){
+  if(!T || T.done) return;
+  if(T.mode === 'note'){
+    for(var f in T.askTargets) mark(T.ask, +f, 'hint', noteName(pcAt(T.ask, +f), T.flat));
+  } else {
+    for(var k in T.targets) if(!T.found[k]){
+      var s = +k.split(':')[0], f2 = +k.split(':')[1];
+      mark(s, f2, 'hint', T.mode === 'ival' ? T.iv.sh : T.targets[k]);
+    }
+  }
+  T.done = true;
+  updateTask();
+  toast('Cevaplar açıldı');
+}
+function doListen(){
+  if(!T) return;
+  audioOn();
+  if(T.mode === 'scale'){
+    /* gamı kökten bir oktav çal */
+    var sc = SCALES[T.scaleKey], base = 48 + T.root;
+    var ms = [];
+    for(var i=0;i<sc.deg.length;i++) ms.push(base + sc.deg[i]);
+    ms.push(base + 12);
+    playSeq(ms, 0.2);
+  } else if(T.mode === 'note'){
+    playNote(T.refMidi, 0.6);
+  } else if(T.mode === 'ival'){
+    var m = midiAt(T.ref.s, T.ref.f);
+    playSeq([m, m + T.iv.s], 0.42);
+  }
+}
+
+/* ============================================================
+   9. Arayüz bağlantıları
+   ============================================================ */
+
+/* Dokunuş, parmak kalkarken değerlendiriliyor: böylece klavyeyi yana
+   kaydırırken istemsizce nota basılmıyor. 10 px’den fazla kayma = kaydırma. */
+var press = null;
+neck.addEventListener('pointerdown', function(e){
+  var c = e.target.closest('.cell');
+  if(!c) return;
+  press = {x:e.clientX, y:e.clientY, id:e.pointerId, cell:c, t:Date.now()};
+}, {passive:true});
+neck.addEventListener('pointermove', function(e){
+  if(!press || e.pointerId !== press.id) return;
+  if(Math.abs(e.clientX - press.x) > 10 || Math.abs(e.clientY - press.y) > 10) press = null;
+}, {passive:true});
+neck.addEventListener('pointerup', function(e){
+  if(!press || e.pointerId !== press.id) return;
+  var c = press.cell; press = null;
+  onTap(+c.dataset.s, +c.dataset.f);
+}, {passive:true});
+neck.addEventListener('pointercancel', function(){ press = null; }, {passive:true});
+
+document.querySelectorAll('.tab').forEach(function(b){
+  b.addEventListener('click', function(){ setMode(b.dataset.mode); });
+});
+function setMode(m){
+  S.mode = m; save();
+  document.querySelectorAll('.tab').forEach(function(b){
+    b.setAttribute('aria-selected', b.dataset.mode === m ? 'true' : 'false');
+  });
+  newRound();
+}
+
+$('#btnNew').addEventListener('click', newRound);
+$('#btnHint').addEventListener('click', doHint);
+$('#btnReveal').addEventListener('click', doReveal);
+$('#btnListen').addEventListener('click', doListen);
+
+document.querySelectorAll('#zoomSeg button').forEach(function(b){
+  b.addEventListener('click', function(){
+    S.zoom = b.dataset.zoom; save(); paintZoom(); layout(); scrollToZone();
+  });
+});
+function paintZoom(){
+  document.querySelectorAll('#zoomSeg button').forEach(function(b){
+    b.setAttribute('aria-pressed', b.dataset.zoom === S.zoom ? 'true' : 'false');
+  });
+}
+
+$('#btnSound').addEventListener('click', function(){
+  S.sound = !S.sound; save(); paintSound();
+  if(S.sound){ audioOn(); playNote(midiAt(2, 0), .5); }
+});
+function paintSound(){
+  $('#btnSound').textContent = S.sound ? '🔊' : '🔇';
+  var sw = $('#setSound'); if(sw) sw.setAttribute('aria-pressed', S.sound ? 'true':'false');
+}
+
+/* ---------- ayar sayfası ---------- */
+$('#btnSet').addEventListener('click', function(){
+  $('#stOk').textContent = ST.ok; $('#stNo').textContent = ST.no; $('#stBest').textContent = ST.best;
+  $('#sheet').classList.add('on');
+});
+$('#btnClose').addEventListener('click', closeSheet);
+$('#sheet').addEventListener('click', function(e){ if(e.target.id === 'sheet') closeSheet(); });
+function closeSheet(){ $('#sheet').classList.remove('on'); layout(); }
+
+function toggler(id, key, after){
+  var el = $(id);
+  el.setAttribute('aria-pressed', S[key] ? 'true' : 'false');
+  el.addEventListener('click', function(){
+    S[key] = !S[key];
+    el.setAttribute('aria-pressed', S[key] ? 'true' : 'false');
+    save(); if(after) after();
+  });
+}
+toggler('#setDeg', 'showDeg', repaintRound);
+toggler('#setNames', 'showNames', repaintRound);
+toggler('#setLefty', 'lefty', function(){ layout(); scrollToZone(); });
+toggler('#setSound', 'sound', paintSound);
+toggler('#setAuto', 'autoNext');
+toggler('#setUnison', 'unison', newRound);
+
+function repaintRound(){
+  /* bulunmuş cevapları koruyarak yeniden boya */
+  var found = T ? T.found : {};
+  clearBoard();
+  if(!T) return;
+  paintTask();
+  for(var k in found){
+    var s = +k.split(':')[0], f = +k.split(':')[1];
+    var lab = T.mode === 'ival' ? T.iv.sh : (T.targets[k] || noteName(pcAt(s,f), T.flat));
+    mark(s, f, 'ok', S.showDeg ? lab : noteName(pcAt(s,f), T.flat));
+  }
+  layout();
+}
+
+document.querySelectorAll('#setNaming .chip').forEach(function(b){
+  b.addEventListener('click', function(){
+    S.naming = b.dataset.v; save(); paintNaming(); repaintRound(); updateTask();
+  });
+});
+function paintNaming(){
+  document.querySelectorAll('#setNaming .chip').forEach(function(b){
+    b.setAttribute('aria-pressed', b.dataset.v === S.naming ? 'true' : 'false');
+  });
+}
+
+function selBind(id, key, num, after){
+  var el = $(id);
+  el.value = String(S[key]);
+  el.addEventListener('change', function(){
+    S[key] = num ? +el.value : el.value; save(); if(after) after();
+  });
+}
+selBind('#setFrets', 'maxFret', true, newRound);
+selBind('#setSpan', 'span', true, newRound);
+selBind('#setNoteStrings', 'noteStrings', true, newRound);
+
+(function(){
+  var sel = $('#setTuning');
+  for(var k in TUNINGS){
+    var o = document.createElement('option');
+    o.value = k; o.textContent = TUNINGS[k].name; sel.appendChild(o);
+  }
+  selBind('#setTuning', 'tuning', false, newRound);
+})();
+
+(function(){
+  var box = $('#setScales');
+  SCALE_ORDER.forEach(function(k){
+    var b = document.createElement('button');
+    b.className = 'chip'; b.textContent = SCALES[k].name;
+    b.setAttribute('aria-pressed', S.scales[k] ? 'true' : 'false');
+    b.addEventListener('click', function(){
+      S.scales[k] = S.scales[k] ? 0 : 1;
+      if(!enabledScales().length){ S.scales[k] = 1; }
+      b.setAttribute('aria-pressed', S.scales[k] ? 'true' : 'false');
+      save();
+    });
+    box.appendChild(b);
+  });
+})();
+
+(function(){
+  var box = $('#setIvals');
+  IVALS.forEach(function(iv){
+    var b = document.createElement('button');
+    b.className = 'chip'; b.textContent = iv.sh + ' · ' + iv.nm;
+    b.setAttribute('aria-pressed', S.ivals[iv.s] ? 'true' : 'false');
+    b.addEventListener('click', function(){
+      S.ivals[iv.s] = S.ivals[iv.s] ? 0 : 1;
+      b.setAttribute('aria-pressed', S.ivals[iv.s] ? 'true' : 'false');
+      save();
+    });
+    box.appendChild(b);
+  });
+})();
+
+$('#btnReset').addEventListener('click', function(){
+  ST.ok = ST.no = ST.streak = ST.best = 0;
+  save();
+  $('#sOk').textContent = '0'; $('#sNo').textContent = '0'; $('#sSt').textContent = '0';
+  $('#stOk').textContent = '0'; $('#stNo').textContent = '0'; $('#stBest').textContent = '0';
+  toast('Sayaçlar sıfırlandı');
+});
+
+/* ---------- yeniden boyutlanma ---------- */
+var rz = null;
+function onResize(){
+  clearTimeout(rz);
+  rz = setTimeout(function(){ layout(); scrollToZone(); }, 120);
+}
+window.addEventListener('resize', onResize);
+window.addEventListener('orientationchange', onResize);
+
+/* ilk dokunuşta ses motorunu uyandır (iOS şartı) */
+document.addEventListener('touchstart', function once(){
+  audioOn(); document.removeEventListener('touchstart', once);
+}, {passive:true});
+document.addEventListener('mousedown', function once2(){
+  audioOn(); document.removeEventListener('mousedown', once2);
+});
+
+/* ---------- açılış ---------- */
+buildCells();
+paintNaming(); paintZoom(); paintSound();
+document.querySelectorAll('.tab').forEach(function(b){
+  b.setAttribute('aria-selected', b.dataset.mode === S.mode ? 'true' : 'false');
+});
+$('#sOk').textContent = ST.ok; $('#sNo').textContent = ST.no; $('#sSt').textContent = ST.streak;
+newRound();
+setTimeout(function(){ layout(); scrollToZone(); }, 60);
+
+/* servis işçisi — çevrimdışı çalışsın */
+if('serviceWorker' in navigator && location.protocol.indexOf('http') === 0){
+  navigator.serviceWorker.register('sw.js').catch(function(){});
+}
+})();
+</script>

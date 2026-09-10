@@ -1,0 +1,17 @@
+{
+  "name": "Klavye Ustası",
+  "short_name": "Klavye",
+  "description": "Gitar klavyesi antrenörü — gam, ses bulma ve aralık alıştırmaları",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#101219",
+  "theme_color": "#101219",
+  "lang": "tr",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
