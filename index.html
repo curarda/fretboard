@@ -80,10 +80,10 @@ button{font:inherit; color:inherit; background:none; border:0; cursor:pointer}
 .iconbtn:active{background:var(--panel-2)}
 
 /* ---------- mod sekmeleri ---------- */
-.tabs{display:grid; grid-template-columns:repeat(4,1fr); gap:6px}
+.tabs{display:grid; grid-template-columns:repeat(5,1fr); gap:5px}
 .tab{
-  padding:9px 4px; border-radius:11px; background:var(--panel);
-  border:1px solid var(--line); font-size:12.5px; font-weight:600; color:var(--ink-2);
+  padding:9px 2px; border-radius:11px; background:var(--panel);
+  border:1px solid var(--line); font-size:11.5px; font-weight:600; color:var(--ink-2);
   display:flex; flex-direction:column; align-items:center; gap:2px; line-height:1.15;
 }
 .tab u{font-size:15px; text-decoration:none}
@@ -274,6 +274,7 @@ select{
     <button class="tab" role="tab" data-mode="scale"><u>🎼</u>Gam</button>
     <button class="tab" role="tab" data-mode="note"><u>🎯</u>Ses Bul</button>
     <button class="tab" role="tab" data-mode="ival"><u>📐</u>Aralık</button>
+    <button class="tab" role="tab" data-mode="own"><u>🎛</u>Seçtiğim</button>
     <button class="tab" role="tab" data-mode="free"><u>🎸</u>Serbest</button>
   </div>
 
@@ -287,6 +288,7 @@ select{
     </div>
     <div class="actions" id="acts">
       <button class="btn primary" id="btnNew">Yeni soru</button>
+      <button class="btn" id="btnPick">🎛 Gam seç</button>
       <button class="btn" id="btnListen">🔊 Dinle</button>
       <button class="btn" id="btnHint">İpucu</button>
       <button class="btn ghost" id="btnReveal">Cevabı göster</button>
@@ -316,6 +318,31 @@ select{
 </div>
 
 <div id="toast"></div>
+
+<div class="sheet" id="pick">
+  <div class="sheet-in">
+    <h2>Ne çalışalım? <button id="pickClose">Kapat ✕</button></h2>
+    <div class="grp">
+      <h3>Kök ses</h3>
+      <div class="chips" id="pickRoot"></div>
+    </div>
+    <div class="grp">
+      <h3>Gam</h3>
+      <div class="chips" id="pickScale"></div>
+    </div>
+    <div class="grp">
+      <h3>Bölge</h3>
+      <div class="chips" id="pickRegion">
+        <button class="chip" data-v="all">Tüm klavye</button>
+        <button class="chip" data-v="low">0–12. perde</button>
+        <button class="chip" data-v="high">12–24. perde</button>
+      </div>
+      <p class="tip">Seçtiğin gamın bölgedeki bütün seslerine dokun — bulduğun sesler
+      yeşil kalır, klavyeyi yana kaydırarak devam edersin. Baştan almak için
+      <b>Baştan</b> düğmesi.</p>
+    </div>
+  </div>
+</div>
 
 <div class="sheet" id="sheet">
   <div class="sheet-in">
@@ -450,6 +477,7 @@ var DEF = {
   mode:'scale', naming:'do', sound:true, lefty:false, maxFret:24, tuning:'std',
   span:4, showNames:false, showDeg:true, autoNext:true, unison:false,
   noteStrings:3, zoom:'fit',
+  ownRoot:9, ownScale:'minpent', ownRegion:'all',
   scales:{majpent:1, minpent:1, major:1, minor:1, blues:0, dorian:0, mixo:0, harmminor:0},
   ivals:{3:1, 4:1, 5:1, 7:1, 10:1, 12:1, 1:0, 2:0, 6:0, 8:0, 9:0, 11:0}
 };
@@ -739,7 +767,9 @@ function layout(){
 }
 
 function paintZone(){
-  if(!T || T.from == null || S.mode === 'free'){ G.zone.style.display = 'none'; return; }
+  /* bütün klavye hedefken vurgulamaya gerek yok — her yer serbest */
+  var allBoard = T && T.mode === 'own' && S.ownRegion === 'all';
+  if(!T || T.from == null || S.mode === 'free' || allBoard){ G.zone.style.display = 'none'; return; }
   var a = G.L(T.from), b = G.L(T.to);
   var left = Math.min(a, b), right = Math.max(a + G.W[T.from], b + G.W[T.to]);
   G.zone.style.display = '';
@@ -831,6 +861,7 @@ function newRound(){
   if(S.mode === 'scale') buildScale();
   else if(S.mode === 'note') buildNote();
   else if(S.mode === 'ival') buildIval();
+  else if(S.mode === 'own') buildOwn();
   else buildFree();
   clearBoard();
   layout();
@@ -862,6 +893,28 @@ function buildScale(){
     }
   }
   T.from = 0; T.to = span; T.targets = {}; T.total = 0;
+}
+
+/* ---- Mod 4: kendi seçtiğin gam, klavye boyunca ---- */
+function buildOwn(){
+  var maxF = S.maxFret, from = 0, to = maxF;
+  if(S.ownRegion === 'low')  { from = 0; to = Math.min(12, maxF); }
+  if(S.ownRegion === 'high') { from = Math.min(12, Math.max(0, maxF - 5)); to = maxF; }
+
+  var sc = SCALES[S.ownScale] || SCALES.minpent;
+  var set = {};
+  for(var i=0; i<sc.deg.length; i++) set[(S.ownRoot + sc.deg[i]) % 12] = sc.lab[i];
+
+  var tg = {}, n = 0;
+  for(var s=0; s<6; s++) for(var f=from; f<=to; f++){
+    var lab = set[pcAt(s,f)];
+    if(lab !== undefined){ tg[ki(s,f)] = lab; n++; }
+  }
+  T.scaleKey = S.ownScale; T.root = S.ownRoot;
+  T.from = from; T.to = to;
+  /* bölge tüm klavye olabilir; "Odak" görünümü baştan bir avuç perde göstersin */
+  T.viewFrom = from; T.viewTo = Math.min(from + 6, to);
+  T.targets = tg; T.total = n; T.flat = !!FLAT_ROOTS[S.ownRoot];
 }
 
 /* ---- Mod 2: sesi diğer tellerde bul ---- */
@@ -1073,7 +1126,7 @@ function finish(){
     ? 'Kusursuz! ' + sec + ' sn'
     : 'Bitti · ' + sec + ' sn · ' + T.wrong + ' hata';
   toast(msg, T.wrong === 0 ? 'good' : '');
-  if(S.sound && T.mode === 'scale'){
+  if(S.sound && (T.mode === 'scale' || T.mode === 'own')){
     /* ödül: gamı bölgedeki en pes sesten yukarı doğru çal */
     var ms = [];
     for(var k in T.targets) ms.push(midiAt(+k.split(':')[0], +k.split(':')[1]));
@@ -1082,22 +1135,34 @@ function finish(){
     setTimeout(function(){ playSeq(uniq, 0.13); }, 180);
   }
   updateTask();
-  if(S.autoNext) setTimeout(function(){ if(T && T.done) newRound(); }, 1600);
+  /* seçtiğin gamda kendiliğinden yeni soruya geçilmez — aynı gam seninle kalır */
+  if(S.autoNext && T.mode !== 'own') setTimeout(function(){ if(T && T.done) newRound(); }, 1600);
 }
 
 /* ============================================================
    8. Görev metni
    ============================================================ */
 
+var REGION_TXT = {all:'Tüm klavye', low:'0–12. perde', high:'12. perdeden sonrası'};
+
 function updateTask(){
   var t = $('#tTitle'), sub = $('#tSub'), cnt = $('#tCount');
-  var acts = {hint:true, listen:true, reveal:true};
+  var acts = {hint:true, listen:true, reveal:true, pick:false};
 
   if(S.mode === 'free'){
     t.innerHTML = 'Serbest çalış';
     sub.textContent = 'İstediğin perdeye dokun — sesini duy, adını gör.';
     cnt.style.display = 'none';
-    acts = {hint:false, listen:false, reveal:false};
+    acts = {hint:false, listen:false, reveal:false, pick:false};
+  } else if(S.mode === 'own'){
+    var so = SCALES[T.scaleKey];
+    t.innerHTML = '<em>' + noteName(T.root, T.flat) + '</em> ' + so.name;
+    sub.innerHTML = REGION_TXT[S.ownRegion] + ' · <b>' + T.total + ' ses</b> · ' +
+                    'gamın bütün seslerine dokun';
+    cnt.style.display = '';
+    cnt.firstChild.textContent = T.n + '/' + T.total;
+    cnt.lastChild.textContent = 'bulunan';
+    acts.pick = true;
   } else if(S.mode === 'scale'){
     var sc = SCALES[T.scaleKey];
     t.innerHTML = '<em>' + noteName(T.root, T.flat) + '</em> ' + sc.name;
@@ -1126,6 +1191,8 @@ function updateTask(){
   $('#btnHint').style.display = acts.hint ? '' : 'none';
   $('#btnListen').style.display = acts.listen ? '' : 'none';
   $('#btnReveal').style.display = acts.reveal ? '' : 'none';
+  $('#btnPick').style.display = acts.pick ? '' : 'none';
+  $('#btnNew').textContent = S.mode === 'own' ? 'Baştan' : (S.mode === 'free' ? 'Temizle' : 'Yeni soru');
   $('#btnHint').disabled = !!(T && T.done);
   $('#hintline').textContent = '';
 }
@@ -1177,7 +1244,7 @@ function doReveal(){
 function doListen(){
   if(!T) return;
   audioOn();
-  if(T.mode === 'scale'){
+  if(T.mode === 'scale' || T.mode === 'own'){
     /* gamı kökten bir oktav çal */
     var sc = SCALES[T.scaleKey], base = 48 + T.root;
     var ms = [];
@@ -1249,6 +1316,58 @@ $('#btnSound').addEventListener('click', function(){
 function paintSound(){
   $('#btnSound').textContent = S.sound ? '🔊' : '🔇';
   var sw = $('#setSound'); if(sw) sw.setAttribute('aria-pressed', S.sound ? 'true':'false');
+}
+
+/* ---------- gam seçme sayfası ---------- */
+$('#btnPick').addEventListener('click', openPick);
+$('#pickClose').addEventListener('click', closePick);
+$('#pick').addEventListener('click', function(e){ if(e.target.id === 'pick') closePick(); });
+function openPick(){
+  if(S.mode !== 'own') setMode('own');
+  paintPick();
+  $('#pick').classList.add('on');
+}
+function closePick(){ $('#pick').classList.remove('on'); layout(); scrollToZone(); }
+
+(function(){
+  var box = $('#pickRoot');
+  for(var pc=0; pc<12; pc++){
+    var b = document.createElement('button');
+    b.className = 'chip'; b.dataset.pc = pc;
+    box.appendChild(b);
+    b.addEventListener('click', (function(v){ return function(){
+      S.ownRoot = v; save(); paintPick(); newRound();
+    }; })(pc));
+  }
+  var sbox = $('#pickScale');
+  SCALE_ORDER.forEach(function(k){
+    var b2 = document.createElement('button');
+    b2.className = 'chip'; b2.dataset.sc = k; b2.textContent = SCALES[k].name;
+    sbox.appendChild(b2);
+    b2.addEventListener('click', function(){
+      S.ownScale = k; save(); paintPick(); newRound();
+    });
+  });
+  document.querySelectorAll('#pickRegion .chip').forEach(function(b3){
+    b3.addEventListener('click', function(){
+      S.ownRegion = b3.dataset.v; save(); paintPick(); newRound();
+    });
+  });
+})();
+
+function paintPick(){
+  document.querySelectorAll('#pickRoot .chip').forEach(function(b){
+    var pc = +b.dataset.pc;
+    /* Sib, Mib, Lab… gitarda alışılmış yazılış; başlıkta da aynısı görünür */
+    b.textContent = noteName(pc, !!FLAT_ROOTS[pc]);
+    b.setAttribute('aria-pressed', pc === S.ownRoot ? 'true' : 'false');
+  });
+  document.querySelectorAll('#pickScale .chip').forEach(function(b){
+    b.setAttribute('aria-pressed', b.dataset.sc === S.ownScale ? 'true' : 'false');
+  });
+  document.querySelectorAll('#pickRegion .chip').forEach(function(b){
+    b.setAttribute('aria-pressed', b.dataset.v === S.ownRegion ? 'true' : 'false');
+  });
 }
 
 /* ---------- ayar sayfası ---------- */
@@ -1379,7 +1498,7 @@ document.addEventListener('mousedown', function once2(){
 
 /* ---------- açılış ---------- */
 buildCells();
-paintNaming(); paintZoom(); paintSound();
+paintNaming(); paintZoom(); paintSound(); paintPick();
 document.querySelectorAll('.tab').forEach(function(b){
   b.setAttribute('aria-selected', b.dataset.mode === S.mode ? 'true' : 'false');
 });

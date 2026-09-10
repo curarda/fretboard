@@ -5,7 +5,7 @@
    Yani ilk açılıştan sonra uçak modunda da birebir aynı çalışır.
 
    CACHE adı değişince eski önbellek atılır — sync.py bunu otomatik artırır. */
-var CACHE = 'gk-v3';
+var CACHE = 'gk-v4';
 var ASSETS = ['./', './index.html', './manifest.webmanifest',
               './icon-180.png', './icon-192.png', './icon-512.png'];
 
